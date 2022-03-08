@@ -1,0 +1,90 @@
+things we need for groceries
+
+User:
+    this table will store info about the user
+-first/last
+-user_id
+-email
+
+Authorization:
+    this table will store Authorization info
+-dob
+-password
+
+Recipies:
+    this table will store info about different Recipies
+-recipe_id
+-pictures
+-instructions
+-ingredients
+-public/private
+
+Grocery List:
+    this will store different ingredients
+-groceries/ingredients
+-price
+
+Occasions:
+    this will store different Occasions
+-holidays
+-birthdays
+
+RELATIONSHIPS
+
+One to one:
+User to Authorization
+User to groceries
+
+One to many:
+User to Recipies
+groceries to Recipies
+
+Many to many:
+User to Occasions
+recipies to Occasions
+
+COLUMNS
+
+Recipies:
+    recipe_id:
+        an id that will refrence the specific recipie, uses integer and will be uinque
+    pictures:
+        any pictures of the food, text type
+    instructions:
+        list of instructions on how to cook the recipie, text type, could be varchar but might be long
+    ingredient_id:
+        refrences the specific ingredient from the ingredients table, integer
+
+ingredient:
+    ingredient_id: 
+        refrenced specific ingredient, is uinque integer
+    ingredient:
+        english for the ingredient (carrot) uses varchar beacause it should be short
+    price:
+        price of ingredient, float because could be fraction of int
+
+GroceryList:
+    ingredient_id: 
+        refrences the ingredient will be uinque int
+    user_id:
+        refrences what user this grocery list belongs to
+
+User:
+    user_id:
+        will be uinque int for every user
+    first_name:
+        will be first name of user, is varchar cause should be short
+    last_name:
+        will be last name of user, is varchar casue should be short
+    email:
+        will refrence email of user, is varchar cause should be short
+    occasion_id:
+        refrences all occasions user is associated with will be uinque int
+
+Authorization:
+    user_id:
+        refrences auth info for specific user
+    dob:
+        uses time because is date of birth
+    password:
+        uses varchar casue should be short
